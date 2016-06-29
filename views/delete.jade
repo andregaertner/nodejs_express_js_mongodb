@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h3= title
+  form#form_delete_user.form-horizontal(method="post", action="/#{user._id}/delete")
+    input#input_name.form-control(type="hidden", name="_method" value="delete" )
+    button#submit_student.btn.btn-large.btn-danger(type="submit") delete

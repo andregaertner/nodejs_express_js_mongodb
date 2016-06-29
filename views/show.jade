@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h3.
+    Data for #{user.name}:
+
+  a(href='/new').btn.btn-success Create New User
+  &nbsp;
+  a(href='/users').btn.btn-info Show all User
+  br
+  br
+
+  table.table.table-striped
+      tr
+        th id
+        th Name
+        th Email
+        th Alter
+        th Show
+        th Edit
+        th Delete
+
+
+        tr
+          td #{user._id}
+          td #{user.name}
+          td #{user.email}
+          td #{user.age}
+          td
+            a(href='#{user.id}').btn.btn-success Show
+          td
+            a(href='#{user.id}/edit').btn.btn-info Edit
+          td
+            form#form_delete_user.form-horizontal(method="post", action="/#{user._id}/delete")
+              input#input_name.form-control(type="hidden", name="_method" value="delete" )
+              button#submit_student.btn.btn-delete.btn-danger(type="submit") delete
