@@ -48,7 +48,7 @@ router.get('/users', function(req, res, next){
  * @param id
  */
 router.get('/new', function(req, res, next){
-  res.render('new', {title: 'new User' });
+  res.render('new', {title: 'New User' });
 });
 
 /**
@@ -74,7 +74,7 @@ router.post('/create', function(req, res){
  * @param id
  * @return edi view, title, user
  */
-router.get('/:id/edit', function(req, res){
+  router.get('/:id/edit', function(req, res){
   User.findById(req.params.id, function(err, doc){
     if(err){
       res.send(err);
