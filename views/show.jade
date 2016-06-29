@@ -16,7 +16,6 @@ block content
         th Name
         th Email
         th Alter
-        th Show
         th Edit
         th Delete
 
@@ -26,8 +25,6 @@ block content
           td #{user.name}
           td #{user.email}
           td #{user.age}
-          td
-            a(href='#{user.id}').btn.btn-success Show
           td
             a(href='#{user.id}/edit').btn.btn-info Edit
           td
